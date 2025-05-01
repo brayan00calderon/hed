@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias - HED Soluciones Tecnológicas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/noticias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="HED Soluciones Tecnológicas" id="logo">
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Buscar noticias...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="nosotros.html">NOSOTROS</a></li>
+                <li><a href="servicios.html">NUESTROS SERVICIOS</a></li>
+                <li><a href="noticias.html">NOTICIAS</a></li>
+                <li><a href="paginas.html">PÁGINAS</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="contacto.html">CONTÁCTENOS</a></li>
+                <li class="cart-icon">
+                    <a href="carrito.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="noticias-container">
+        <section class="hero-noticias">
+            <h1>Noticias y Novedades</h1>
+            <p>Mantente informado sobre las últimas tendencias tecnológicas</p>
+        </section>
+
+        <div class="noticias-content">
+            <section class="noticias-grid">
+                <article class="noticia-card">
+                    <div class="noticia-imagen">
+                        <img src="images/noticia1.jpg" alt="Nueva tecnología">
+                        <div class="noticia-fecha">
+                            <span class="dia">15</span>
+                            <span class="mes">Mar</span>
+                        </div>
+                    </div>
+                    <div class="noticia-contenido">
+                        <h2>Nuevas tendencias en desarrollo de software para 2024</h2>
+                        <p class="noticia-resumen">Exploramos las principales tendencias que están transformando el desarrollo de software este año...</p>
+                        <a href="#" class="leer-mas">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="noticia-card">
+                    <div class="noticia-imagen">
+                        <img src="images/noticia2.jpg" alt="Seguridad informática">
+                        <div class="noticia-fecha">
+                            <span class="dia">10</span>
+                            <span class="mes">Mar</span>
+                        </div>
+                    </div>
+                    <div class="noticia-contenido">
+                        <h2>Importancia de la ciberseguridad en la era digital</h2>
+                        <p class="noticia-resumen">Analizamos las mejores prácticas para proteger tu empresa de amenazas cibernéticas...</p>
+                        <a href="#" class="leer-mas">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="noticia-card">
+                    <div class="noticia-imagen">
+                        <img src="images/noticia3.jpg" alt="Cloud computing">
+                        <div class="noticia-fecha">
+                            <span class="dia">05</span>
+                            <span class="mes">Mar</span>
+                        </div>
+                    </div>
+                    <div class="noticia-contenido">
+                        <h2>Beneficios de la migración a la nube para PYMES</h2>
+                        <p class="noticia-resumen">Descubre cómo el cloud computing puede impulsar el crecimiento de tu negocio...</p>
+                        <a href="#" class="leer-mas">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="noticia-card">
+                    <div class="noticia-imagen">
+                        <img src="images/noticia4.jpg" alt="Inteligencia artificial">
+                        <div class="noticia-fecha">
+                            <span class="dia">28</span>
+                            <span class="mes">Feb</span>
+                        </div>
+                    </div>
+                    <div class="noticia-contenido">
+                        <h2>Inteligencia Artificial en el mundo empresarial</h2>
+                        <p class="noticia-resumen">Cómo la IA está revolucionando los procesos empresariales y mejorando la eficiencia...</p>
+                        <a href="#" class="leer-mas">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </section>
+
+            <aside class="sidebar">
+                <div class="categorias">
+                    <h3>Categorías</h3>
+                    <ul>
+                        <li><a href="#">Desarrollo de Software</a></li>
+                        <li><a href="#">Ciberseguridad</a></li>
+                        <li><a href="#">Cloud Computing</a></li>
+                        <li><a href="#">Inteligencia Artificial</a></li>
+                        <li><a href="#">Tendencias Tecnológicas</a></li>
+                    </ul>
+                </div>
+
+                <div class="newsletter">
+                    <h3>Suscríbete a nuestro Newsletter</h3>
+                    <p>Recibe las últimas noticias directamente en tu correo</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit">Suscribirse</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Email: info@hedsoluciones.com</p>
+                <p>Teléfono: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HED Soluciones Tecnológicas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

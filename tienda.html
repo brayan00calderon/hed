@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - HED Soluciones Tecnológicas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/tienda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="HED Soluciones Tecnológicas" id="logo">
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Buscar productos...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="nosotros.html">NOSOTROS</a></li>
+                <li><a href="servicios.html">NUESTROS SERVICIOS</a></li>
+                <li><a href="noticias.html">NOTICIAS</a></li>
+                <li><a href="paginas.html">PÁGINAS</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="contacto.html">CONTÁCTENOS</a></li>
+                <li class="cart-icon">
+                    <a href="carrito.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="tienda-container">
+        <h1>Nuestros Productos</h1>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <img src="images/producto1.jpg" alt="Producto 1">
+                <h3>Software Empresarial</h3>
+                <p>Solución integral para la gestión de su empresa</p>
+                <p class="precio">$999.99</p>
+                <button onclick="addToCart({id: 1, nombre: 'Software Empresarial', precio: 999.99})">
+                    Agregar al Carrito
+                </button>
+            </div>
+            <div class="producto-card">
+                <img src="images/producto2.jpg" alt="Producto 2">
+                <h3>Servicio de Cloud</h3>
+                <p>Almacenamiento y procesamiento en la nube</p>
+                <p class="precio">$499.99/mes</p>
+                <button onclick="addToCart({id: 2, nombre: 'Servicio de Cloud', precio: 499.99})">
+                    Agregar al Carrito
+                </button>
+            </div>
+            <div class="producto-card">
+                <img src="images/producto3.jpg" alt="Producto 3">
+                <h3>Seguridad Informática</h3>
+                <p>Protección avanzada para sus sistemas</p>
+                <p class="precio">$799.99</p>
+                <button onclick="addToCart({id: 3, nombre: 'Seguridad Informática', precio: 799.99})">
+                    Agregar al Carrito
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Email: info@hedsoluciones.com</p>
+                <p>Teléfono: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HED Soluciones Tecnológicas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

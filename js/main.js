@@ -1,0 +1,89 @@
+// Carrito de compras
+let cart = [];
+const cartCount = document.querySelector('.cart-count');
+
+// Función para actualizar el contador del carrito
+function updateCartCount() {
+    cartCount.textContent = cart.length;
+}
+
+// Función para agregar productos al carrito
+function addToCart(product) {
+    cart.push(product);
+    updateCartCount();
+    showNotification('Producto agregado al carrito');
+}
+
+// Función para mostrar notificaciones
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
+// Transiciones suaves entre páginas
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('a');
+    
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (link.href && link.href.includes(window.location.hostname)) {
+                e.preventDefault();
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 300);
+            }
+        });
+    });
+
+    // Animación de entrada
+    document.body.style.opacity = '1';
+});
+
+// Funcionalidad del buscador
+const searchForm = document.querySelector('.search-container');
+if (searchForm) {
+    searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const searchTerm = searchForm.querySelector('input').value;
+        // Aquí puedes implementar la lógica de búsqueda
+        console.log('Buscando:', searchTerm);
+    });
+}
+
+// Agregar estilos para las notificaciones
+const style = document.createElement('style');
+style.textContent = `
+    .notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 4px;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    body {
+        transition: opacity 0.3s ease;
+    }
+`;
+document.head.appendChild(style); 

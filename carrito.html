@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - HED Soluciones Tecnológicas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carrito.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="HED Soluciones Tecnológicas" id="logo">
+                </a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Buscar...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="nosotros.html">NOSOTROS</a></li>
+                <li><a href="servicios.html">NUESTROS SERVICIOS</a></li>
+                <li><a href="noticias.html">NOTICIAS</a></li>
+                <li><a href="paginas.html">PÁGINAS</a></li>
+                <li><a href="tienda.html">TIENDA</a></li>
+                <li><a href="contacto.html">CONTÁCTENOS</a></li>
+                <li class="cart-icon">
+                    <a href="carrito.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="carrito-container">
+        <h1>Carrito de Compras</h1>
+        <div class="carrito-content">
+            <div class="productos-carrito">
+                <!-- Los productos se agregarán dinámicamente con JavaScript -->
+            </div>
+            <div class="resumen-compra">
+                <h2>Resumen de Compra</h2>
+                <div class="subtotal">
+                    <span>Subtotal:</span>
+                    <span class="subtotal-precio">$0.00</span>
+                </div>
+                <div class="iva">
+                    <span>IVA (19%):</span>
+                    <span class="iva-precio">$0.00</span>
+                </div>
+                <div class="total">
+                    <span>Total:</span>
+                    <span class="total-precio">$0.00</span>
+                </div>
+                <button class="btn-comprar">Proceder al Pago</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Email: info@hedsoluciones.com</p>
+                <p>Teléfono: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociales</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HED Soluciones Tecnológicas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
+</html> 

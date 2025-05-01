@@ -1,0 +1,145 @@
+.nosotros-container {
+    padding: 6rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-nosotros {
+    background: linear-gradient(rgba(46, 204, 113, 0.9), rgba(39, 174, 96, 0.9));
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+}
+
+.hero-nosotros h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.historia {
+    margin-bottom: 4rem;
+}
+
+.historia h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.historia-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.historia-texto p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.historia-imagen img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.valores {
+    margin-bottom: 4rem;
+}
+
+.valores h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.valor-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.valor-card:hover {
+    transform: translateY(-5px);
+}
+
+.valor-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.valor-card h3 {
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+}
+
+.equipo {
+    margin-bottom: 4rem;
+}
+
+.equipo h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.miembro {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.miembro img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.miembro h3 {
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+}
+
+.miembro p {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .historia-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-nosotros h1 {
+        font-size: 2rem;
+    }
+
+    .valores-grid,
+    .equipo-grid {
+        grid-template-columns: 1fr;
+    }
+} 
