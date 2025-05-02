@@ -1,17 +1,12 @@
-// Carrito de compras
-let cart = [];
-const cartCount = document.querySelector('.cart-count');
-
-// Función para actualizar el contador del carrito
-function updateCartCount() {
-    cartCount.textContent = cart.length;
-}
-
-// Función para agregar productos al carrito
-function addToCart(product) {
-    cart.push(product);
-    updateCartCount();
-    showNotification('Producto agregado al carrito');
+// Funcionalidad del buscador
+const searchForm = document.querySelector('.search-container');
+if (searchForm) {
+    searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const searchTerm = searchForm.querySelector('input').value;
+        // Aquí puedes implementar la lógica de búsqueda
+        console.log('Buscando:', searchTerm);
+    });
 }
 
 // Función para mostrar notificaciones
@@ -24,37 +19,6 @@ function showNotification(message) {
     setTimeout(() => {
         notification.remove();
     }, 3000);
-}
-
-// Transiciones suaves entre páginas
-document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('a');
-    
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            if (link.href && link.href.includes(window.location.hostname)) {
-                e.preventDefault();
-                document.body.style.opacity = '0';
-                setTimeout(() => {
-                    window.location.href = link.href;
-                }, 300);
-            }
-        });
-    });
-
-    // Animación de entrada
-    document.body.style.opacity = '1';
-});
-
-// Funcionalidad del buscador
-const searchForm = document.querySelector('.search-container');
-if (searchForm) {
-    searchForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const searchTerm = searchForm.querySelector('input').value;
-        // Aquí puedes implementar la lógica de búsqueda
-        console.log('Buscando:', searchTerm);
-    });
 }
 
 // Agregar estilos para las notificaciones
@@ -86,4 +50,24 @@ style.textContent = `
         transition: opacity 0.3s ease;
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// Transiciones suaves entre páginas
+document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('a');
+    
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (link.href && link.href.includes(window.location.hostname)) {
+                e.preventDefault();
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 300);
+            }
+        });
+    });
+
+    // Animación de entrada
+    document.body.style.opacity = '1';
+}); 

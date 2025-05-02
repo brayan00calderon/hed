@@ -1,41 +1,53 @@
-// Obtener el carrito del localStorage o crear uno nuevo
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+// Hacer las funciones globales
+window.cart = JSON.parse(localStorage.getItem('cart')) || [];
+console.log('Carrito inicial:', window.cart);
 
 // Función para actualizar el carrito en el localStorage
-function updateLocalStorage() {
-    localStorage.setItem('cart', JSON.stringify(cart));
+window.updateLocalStorage = function() {
+    console.log('Actualizando localStorage:', window.cart);
+    localStorage.setItem('cart', JSON.stringify(window.cart));
 }
 
 // Función para actualizar el contador del carrito
-function updateCartCount() {
-    const cartCount = document.querySelector('.cart-count');
-    if (cartCount) {
-        cartCount.textContent = cart.length;
-    }
+window.updateCartCount = function() {
+    console.log('Actualizando contador del carrito');
+    const cartCounts = document.querySelectorAll('.cart-count');
+    cartCounts.forEach(count => {
+        count.textContent = window.cart.reduce((total, item) => total + item.cantidad, 0);
+    });
 }
 
 // Función para actualizar el resumen de compra
-function updateResumenCompra() {
-    const subtotal = cart.reduce((total, item) => total + (item.precio * item.cantidad), 0);
+window.updateResumenCompra = function() {
+    console.log('Actualizando resumen de compra');
+    const subtotal = window.cart.reduce((total, item) => total + (item.precio * item.cantidad), 0);
     const iva = subtotal * 0.19;
     const total = subtotal + iva;
 
-    document.querySelector('.subtotal-precio').textContent = `$${subtotal.toFixed(2)}`;
-    document.querySelector('.iva-precio').textContent = `$${iva.toFixed(2)}`;
-    document.querySelector('.total-precio').textContent = `$${total.toFixed(2)}`;
+    const subtotalElement = document.querySelector('.subtotal-precio');
+    const ivaElement = document.querySelector('.iva-precio');
+    const totalElement = document.querySelector('.total-precio');
+
+    if (subtotalElement) subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    if (ivaElement) ivaElement.textContent = `$${iva.toFixed(2)}`;
+    if (totalElement) totalElement.textContent = `$${total.toFixed(2)}`;
 }
 
 // Función para renderizar los productos en el carrito
-function renderCartItems() {
+window.renderCartItems = function() {
+    console.log('Renderizando productos del carrito');
     const productosCarrito = document.querySelector('.productos-carrito');
-    if (!productosCarrito) return;
+    if (!productosCarrito) {
+        console.log('No se encontró el contenedor de productos del carrito');
+        return;
+    }
 
-    if (cart.length === 0) {
+    if (window.cart.length === 0) {
         productosCarrito.innerHTML = '<p class="carrito-vacio">Tu carrito está vacío</p>';
         return;
     }
 
-    productosCarrito.innerHTML = cart.map((item, index) => `
+    productosCarrito.innerHTML = window.cart.map((item, index) => `
         <div class="producto-en-carrito">
             <img src="images/producto${item.id}.jpg" alt="${item.nombre}">
             <div class="producto-info">
@@ -53,36 +65,40 @@ function renderCartItems() {
 }
 
 // Función para actualizar la cantidad de un producto
-function updateQuantity(index, newQuantity) {
+window.updateQuantity = function(index, newQuantity) {
+    console.log('Actualizando cantidad:', index, newQuantity);
     if (newQuantity < 1) {
         removeFromCart(index);
         return;
     }
-    cart[index].cantidad = newQuantity;
-    updateLocalStorage();
-    renderCartItems();
-    updateResumenCompra();
+    window.cart[index].cantidad = newQuantity;
+    window.updateLocalStorage();
+    window.renderCartItems();
+    window.updateResumenCompra();
+    window.updateCartCount();
 }
 
 // Función para eliminar un producto del carrito
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateLocalStorage();
-    updateCartCount();
-    renderCartItems();
-    updateResumenCompra();
+window.removeFromCart = function(index) {
+    console.log('Eliminando producto:', index);
+    window.cart.splice(index, 1);
+    window.updateLocalStorage();
+    window.updateCartCount();
+    window.renderCartItems();
+    window.updateResumenCompra();
 }
 
 // Función para agregar un producto al carrito
-function addToCart(product) {
-    const existingProduct = cart.find(item => item.id === product.id);
+window.addToCart = function(product) {
+    console.log('Agregando producto al carrito:', product);
+    const existingProduct = window.cart.find(item => item.id === product.id);
     if (existingProduct) {
         existingProduct.cantidad += 1;
     } else {
-        cart.push({...product, cantidad: 1});
+        window.cart.push({...product, cantidad: 1});
     }
-    updateLocalStorage();
-    updateCartCount();
+    window.updateLocalStorage();
+    window.updateCartCount();
     showNotification('Producto agregado al carrito');
 }
 
@@ -100,15 +116,16 @@ function showNotification(message) {
 
 // Inicializar el carrito cuando se carga la página
 document.addEventListener('DOMContentLoaded', () => {
-    updateCartCount();
-    renderCartItems();
-    updateResumenCompra();
+    console.log('Página cargada, inicializando carrito');
+    window.updateCartCount();
+    window.renderCartItems();
+    window.updateResumenCompra();
 
     // Agregar evento al botón de comprar
     const btnComprar = document.querySelector('.btn-comprar');
     if (btnComprar) {
         btnComprar.addEventListener('click', () => {
-            if (cart.length === 0) {
+            if (window.cart.length === 0) {
                 showNotification('Tu carrito está vacío');
                 return;
             }
