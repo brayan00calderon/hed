@@ -70,4 +70,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Animación de entrada
     document.body.style.opacity = '1';
+});
+
+// Menú móvil
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    const navItems = document.querySelectorAll('.nav-links a');
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    });
+
+    // Ajustar el padding del body cuando el navbar es fijo
+    const navbar = document.querySelector('.navbar');
+    const mainContent = document.querySelector('main');
+    if (navbar && mainContent) {
+        const navbarHeight = navbar.offsetHeight;
+        mainContent.style.paddingTop = `${navbarHeight}px`;
+    }
 }); 
